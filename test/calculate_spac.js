@@ -25,19 +25,19 @@ describe('Calculate App', function(){
 
 	describe('Concat Equation', function(){
 		it('should return 5*3 when the value is 5,*,3', function(){
-		  assert.equal("5*3",Calculate.concatEqua("5","*","3"));
+		  assert.equal("5*3",Calculate.concatEquation("5","*","3"));
 		});
 
 		it('should return 5-3 when the value is 5,-,3', function(){
-		  assert.equal("5-3",Calculate.concatEqua("5","-","3"));
+		  assert.equal("5-3",Calculate.concatEquation("5","-","3"));
 		});
 
 		it('should return 5*3 when the value is 5,*,3', function(){
-		  assert.equal("5*3",Calculate.concatEqua("5","*","3"));
+		  assert.equal("5*3",Calculate.concatEquation("5","*","3"));
 		});
 
 		it('should return 5/3 when the value is 5,/,3', function(){
-		  assert.equal("5/3",Calculate.concatEqua("5","/","3"));
+		  assert.equal("5/3",Calculate.concatEquation("5","/","3"));
 		});
 	})
 

@@ -1,45 +1,50 @@
-var Calculate = {};
-Calculate.init = function init(){
-	var firstNumber = $("#in-first-number").val();
-	var secondNumber = $("#in-second-number").val();
-	var operator = Calculate.operation($("#operator").text().trim());
+var Calculate = function(){
+	return{
+		execution :function (){
+			var firstNumber = $("#in-first-number").val();
+			var secondNumber = $("#in-second-number").val();
+			var operator = Calculate.operation($("#operator").text().trim());
 
-	var equation = Calculate.concatEqua(firstNumber,operator,secondNumber);
-	var answer = Calculate.calculation(equation);
-	
-	if(answer == "Infinity"){
-		answer = "Not allow to divide by zero";
-	}	
-	
-	Calculate.setValueAnswer(answer);
-}
+			var equation = Calculate.concatEquation(firstNumber,operator,secondNumber);
+			var answer = Calculate.calculation(equation);
 
-Calculate.concatEqua = function concatEqua(firstNumber,operator,secondNumber){
-	return firstNumber+operator+secondNumber;
-}
+			if(answer == "Infinity"){
+				answer = "Not allow to divide by zero";
+			}	
 
-Calculate.calculation = function calculation(equation){
-	return eval(equation).toFixed(5);
-}
+			Calculate.setValueAnswer(answer);
+		},
 
-Calculate.setValueAnswer = function setValueAnswer(answer){
-	$("#answer").text(answer);
-}
+		concatEquation : function (firstNumber,operator,secondNumber){
+			return firstNumber+operator+secondNumber;
+		},
 
-Calculate.operation = function operation(opr){
-	switch(opr) {
-	    case "Plus":
-	        return "+";
-	    case "Minus":
-	        return "-";
-	    case "Multiply":
-	        return "*";
-	    case "Divide":
-	        return "/";
-	    default:
-	    	return "Unknow";
+		calculation : function (equation){
+			return eval(equation).toFixed(5);
+		},
+
+		setValueAnswer : function (answer){
+			$("#answer").text(answer);
+		},
+
+		operation : function (opr){
+			switch(opr) {
+				case "Plus":
+				return "+";
+				case "Minus":
+				return "-";
+				case "Multiply":
+				return "*";
+				case "Divide":
+				return "/";
+				default:
+				return "Unknow";
+			}
+
+		}
+
 	}
-
-}
+	
+}();
 
 // module.exports = Calculate;
