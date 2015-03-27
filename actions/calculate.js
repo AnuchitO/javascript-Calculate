@@ -46,5 +46,3 @@ var Calculate = function(){
 	}
 	
 }();
-
-// module.exports = Calculate;
