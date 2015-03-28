@@ -30,15 +30,15 @@ var Calculate = function(){
 		operation : function (opr){
 			switch(opr) {
 				case "Plus":
-				return "+";
+					return "+";
 				case "Minus":
-				return "-";
+					return "-";
 				case "Multiply":
-				return "*";
+					return "*";
 				case "Divide":
-				return "/";
+					return "/";
 				default:
-				return "Unknow";
+					return "Unknow";
 			}
 
 		}

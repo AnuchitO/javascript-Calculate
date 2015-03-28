@@ -1,5 +1,6 @@
 *** Setting ***
 Library		Selenium2Library
+
 *** Variable ***
 
 *** Testcases ***
@@ -11,15 +12,18 @@ Valiate button Test
 
 Calculate Test
 	Go To		http://localhost:8000/
-	Textfield Should Contain	//*[@id="in-first-number"]	 	1234.45
+	Input text					//*[@id="in-first-number"]	 	5
 	Click Element				//*[@id="validator-form-cal"]
+	Click Element				//*[@id="operator"]
 	Click Element				//*[@id="minus"]
-	Textfield Should Contain	//*[@id="in-second-number"]	 	1234.45
+	Input text					//*[@id="in-second-number"]	 	2
+	Click Element 		//*[@id="btn-answer"]
+	Element Should Contain 		//*[@id="answer"]		3.00000
 
-	Page Should Not Contain 	The numberi is required and cannot be empty
-Reset Form
-	Click Element		resetBtn
+	# Page Should Not Contain 	The numberi is required and cannot be empty
+#Reset Form
+	#Click Element		resetBtn
 
 Close Browser
-	#Close Browser
+	Close Browser
 *** Keywords ***
