@@ -5,22 +5,14 @@ var Calculate = function(){
 			var secondNumber = $("#in-second-number").val();
 			var operator = Calculate.operation($("#operator").text().trim());
 
-			var equation = Calculate.concatEquation(firstNumber,operator,secondNumber);
-			var answer = Calculate.calculation(equation);
-
-			if(answer == "Infinity"){
-				answer = "Not allow to divide by zero";
-			}	
-
+			var answer = Calculate.calculation(firstNumber,operator,secondNumber);
+			
 			Calculate.setValueAnswer(answer);
 		},
 
-		concatEquation : function (firstNumber,operator,secondNumber){
-			return firstNumber+operator+secondNumber;
-		},
-
-		calculation : function (equation){
-			return eval(equation).toFixed(5);
+		calculation : function (firstNumber,operator,secondNumber){
+			var answer = eval(firstNumber+operator+secondNumber).toFixed(5);
+			return answer=="Infinity"?"Not allow to divide by zero":answer;
 		},
 
 		setValueAnswer : function (answer){
@@ -28,19 +20,13 @@ var Calculate = function(){
 		},
 
 		operation : function (opr){
-			switch(opr) {
-				case "Plus":
-					return "+";
-				case "Minus":
-					return "-";
-				case "Multiply":
-					return "*";
-				case "Divide":
-					return "/";
-				default:
-					return "Unknow";
-			}
-
+			var operator = {
+					Plus:"+",
+					Minus:"-",
+					Multiply:"*",
+					Divide:"/"
+			};
+			return operator[opr];
 		}
 
 	}

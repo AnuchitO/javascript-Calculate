@@ -16,64 +16,35 @@ describe('Calculate App', function(){
 		  expect("/").toEqual(Calculate.operation("Divide"));
 		});
 
-		it('should return Unknow when the value is Dog', function(){
-		  expect("Unknow").toEqual(Calculate.operation("Dog"));
-		});
 	})
-
-	describe('Concat Equation', function(){
-		it('should return 5*3 when the value is 5,*,3', function(){
-		  expect("5*3").toEqual(Calculate.concatEquation("5","*","3"));
-		});
-
-		it('should return 5-3 when the value is 5,-,3', function(){
-		  expect("5-3").toEqual(Calculate.concatEquation("5","-","3"));
-		});
-
-		it('should return 5*3 when the value is 5,*,3', function(){
-		  expect("5*3").toEqual(Calculate.concatEquation("5","*","3"));
-		});
-
-		it('should return 5/3 when the value is 5,/,3', function(){
-		  expect("5/3").toEqual(Calculate.concatEquation("5","/","3"));
-		});
-	})
-
 
 	describe('Calculation', function(){
 		it('should return 5.00000 when the value is 3+2', function(){
-		  var equation = "3+2";
-		  expect("5.00000").toEqual(Calculate.calculation(equation));
-		});
+		  expect("5.00000").toEqual(Calculate.calculation("3","+","2"));
+		})	;
 
-		it('should return 5.12345 when the value is 3+2.2', function(){
-		  var equation = "3+2.12345";
-		  expect("5.12345").toEqual(Calculate.calculation(equation));
+		it('should return 5.20000 when the value is 3+2.2', function(){
+		  expect("5.20000").toEqual(Calculate.calculation("3","+","2.2"));
 		});
 
 		it('should return -1.0000 when the value is -3+2', function(){
-		  var equation = "-3+2";
-		  expect("-1.00000").toEqual(Calculate.calculation(equation));
+		  expect("-1.00000").toEqual(Calculate.calculation("-3","+","2"));
 		});
 
 		it('should return -4.0000 when the value is -2-2', function(){
-		  var equation = "-2-2";
-		  expect("-4.00000").toEqual(Calculate.calculation(equation));
+		  expect("-4.00000").toEqual(Calculate.calculation("-2","-","2"));
 		});
 
-		it('should return 10.00000 when the value is 3*2', function(){
-		  var equation = "10";
-		  expect("10.00000").toEqual(Calculate.calculation(equation));
+		it('should return 6.00000 when the value is 3*2', function(){
+		  expect("6.00000").toEqual(Calculate.calculation("3","*","2"));
 		});
 
 		it('should return 1.5000 when the value is 3/2', function(){
-		  var equation = "3/2";
-		  expect("1.50000").toEqual(Calculate.calculation(equation));
+		  expect("1.50000").toEqual(Calculate.calculation("3","/","2"));
 		});
 
-		it('should return Infinity when the value is 3/0', function(){
-		  var equation = "3/0";
-		  expect("Infinity").toEqual(Calculate.calculation(equation));
+		it('should return \"Not allow to divide by zero\" when the value is 3/0', function(){
+		  expect("Not allow to divide by zero").toEqual(Calculate.calculation("3","/","0"));
 		});
 
 	})
