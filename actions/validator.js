@@ -1,5 +1,4 @@
 $(function(){
-
     if( $.isFunction($.fn.inputmask) ){
         $(".inputmask").inputmask();
     }
@@ -56,6 +55,3 @@ $(function(){
     });
 
 });
-
-
-            
