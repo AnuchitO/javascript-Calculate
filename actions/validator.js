@@ -4,7 +4,6 @@ $(function(){
         $(".inputmask").inputmask();
     }
     
-    
     $('.validator-form').bootstrapValidator({
         message: 'This value is not valid',
         feedbackIcons: {
