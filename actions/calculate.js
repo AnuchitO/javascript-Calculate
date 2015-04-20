@@ -28,7 +28,5 @@ var Calculate = function(){
 			};
 			return operator[opr];
 		}
-
 	}
-	
 }();
