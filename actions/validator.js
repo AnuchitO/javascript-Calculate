@@ -30,7 +30,7 @@ $(function(){
                      callback: {
                         message: 'Not allow to divide by zero',
                         callback: function(value, validator) {
-                            var a = !($('#operator').val()=='Divide' && $('#in-second-number').val()==0);;
+                            var a = !($('#operator').val()=='Divide' && $('#in-second-number').val()==0);
                             return a;
                         }
                     }
@@ -55,7 +55,6 @@ $(function(){
         $('#validator-form-cal').bootstrapValidator('validate');
         Calculate.execution();
     });
-    
 
 });
 
